@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tính Chu Vi và Diện Tích Hình Chữ Nhật</title>
+<style>
+    #ketQua p {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    #ketQua p.show {
+        opacity: 1;
+    }
+
+    h2{
+        color:  red;
+    }
+</style>
+<script>
+    function tinhChuViVaDienTich() {
+        // Lấy giá trị chiều dài và chiều rộng từ input
+        var chieuDai = parseFloat(document.getElementById("chieuDai").value);
+        var chieuRong = parseFloat(document.getElementById("chieuRong").value);
+
+        // Tính chu vi và diện tích
+        var chuVi = 2 * (chieuDai + chieuRong);
+        var dienTich = chieuDai * chieuRong;
+
+        // Hiển thị kết quả với hiệu ứng
+        document.getElementById("chuViResult").innerHTML = "Chu vi: " + chuVi;
+        document.getElementById("dienTichResult").innerHTML = "Diện tích: " + dienTich;
+        document.getElementById("ketQua").classList.add('show');
+    }
+</script>
+</head>
+<body>
+
+    <h1>Nguyễn Hoàng Tùng-22810310151</h1>
+<h2>Tính Chu Vi và Diện Tích Hình Chữ Nhật</h2>
+
+<div>
+    <label for="chieuDai">Chiều dài:</label>
+    <input type="number" id="chieuDai" placeholder="Nhập chiều dài">
+</div>
+
+<div>
+    <label for="chieuRong">Chiều rộng:</label>
+    <input type="number" id="chieuRong" placeholder="Nhập chiều rộng">
+</div>
+
+<button onclick="tinhChuViVaDienTich()">Tính</button>
+
+<div id="ketQua_">
+    <p id="chuViResult"></p>
+    <p id="dienTichResult"></p>
+</div>
+
+</body>
+</html>
